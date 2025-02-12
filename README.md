@@ -46,7 +46,7 @@ test_weather/
 ├─ requirements.txt         # Python dependencies
 ├─ transform_weather_data.py # Python file for transforming raw data
 └─ README.md                # <--- You are here!
----
+```
 
 ## Getting Started
 
