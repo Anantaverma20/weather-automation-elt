@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  fetch-weather-data:
+    build:
+      context: .
+      dockerfile: Dockerfile.fetch
+    image: weather-fetcher
+    container_name: fetch-weather-data
+    restart: always
+    environment:
+      AWS_ACCESS_KEY_ID: "AWS_ACCESS_KEY"
+      AWS_SECRET_ACCESS_KEY: "AWS_SECRET_ACCESS_KEY"
+      AWS_DEFAULT_REGION: us-west-1
+      API_KEY: "WEATHER_API_KEY"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - transform-weather-data
+
+  transform-weather-data:
+    build:
+      context: .
+      dockerfile: Dockerfile.transform
+    image: weather-transformer
+    container_name: transform-weather-data
+    restart: always
+    environment:
+      AWS_ACCESS_KEY_ID: "AWS_ACCESS_KEY"
+      AWS_SECRET_ACCESS_KEY:  "AWS_SECRET_ACCESS_KEY"
+      AWS_DEFAULT_REGION: us-west-1
+    volumes:
+      - ./data:/app/data
