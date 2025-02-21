@@ -1,6 +1,6 @@
 # Weather Automation ELT Pipeline
 
-A Python-based pipeline for **Extracting**, **Loading**, and **Transforming** (ELT) weather data from various sources into a unified, ready-to-analyze format. This project was designed to automate fetching weather data, storing it, then transforming it for consistency, and optionally loading it back into storage such as CSV files on AWS S3 buckets (e.g., S3).
+A Python-based pipeline for **Extracting**, **Loading**, and **Transforming** (ELT) weather data from various sources into a unified, ready-to-analyze format. This project was designed to automate fetching weather data, storing it, then transforming it for consistency, and optionally loading it back into storage such as CSV files on AWS S3 buckets.
 
 ## Table of Contents
 
